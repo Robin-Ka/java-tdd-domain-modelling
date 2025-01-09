@@ -3,8 +3,6 @@ package com.booleanuk.core;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.HashMap;
-
 public class BasketTest {
 
     @Test
@@ -29,6 +27,19 @@ public class BasketTest {
 
         // Execute and verify
         Assertions.assertFalse(basket.add(productName, price));
+    }
+
+    @Test
+    public void totalCostBasket(){
+        Basket basket = new Basket();
+
+        basket.add("crisps", 30);
+        basket.add("fanta", 25);
+        basket.add("haribo", 30);
+
+        int totalCost = basket.total();
+
+        Assertions.assertEquals(85, totalCost);
     }
 
 }
