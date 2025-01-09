@@ -18,6 +18,17 @@ public class BasketTest {
         Assertions.assertTrue(basket.add(productName, price));
     }
 
-    
+    @Test
+    public void addProductAlreadyInBasket(){
+        // Setup
+        Basket basket = new Basket();
+        String productName = "crisps";
+        int price = 30;
+
+        basket.add(productName, price);
+
+        // Execute and verify
+        Assertions.assertFalse(basket.add(productName, price));
+    }
 
 }
