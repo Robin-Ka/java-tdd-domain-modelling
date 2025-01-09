@@ -14,4 +14,14 @@ public class Basket {
         return false;
     }
 
+    public int total(){
+        int totalCost = 0;
+
+        for (Integer price : items.values()){
+            totalCost += price;
+        }
+
+        return totalCost;
+    }
+
 }
